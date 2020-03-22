@@ -17,17 +17,17 @@ export default function Index() {
 
   if (!data) quote = 'Loading...';
   if (error) quote = 'Failed to fetch the quote.';
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState("");  
 
   return (
     <div>
       <Head>
-        <title>My styled page</title>
+        <title>Where do we go?</title>
         <link href="/static/styles.css" rel="stylesheet" />
       </Head>
       <main className="center">
         <Map setTooltipContent={setContent} />
-        <ReactTooltip>{content}</ReactTooltip>
+        <div> {process.browser && <ReactTooltip>{content}</ReactTooltip>}</div>
       </main>
     </div>
   );
